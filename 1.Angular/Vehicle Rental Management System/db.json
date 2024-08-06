@@ -1,0 +1,32 @@
+{
+  "vehicles": [
+    {
+      "id": "1",
+      "conName": "Murugesh",
+      "renDate": "2024-08-21",
+      "conPhone": "9952827903",
+      "vecType": "two wheeler"
+    },
+    {
+      "id": "2",
+      "conName": "Naveen",
+      "renDate": "2024-08-06",
+      "conPhone": "9994483499",
+      "vecType": "Two Wheeler"
+    },
+    {
+      "id": "3",
+      "conName": "Kathir",
+      "renDate": "2024-08-06",
+      "conPhone": "9994483499",
+      "vecType": "Two Wheeler"
+    },
+    {
+      "id": "4",
+      "conName": "KathirSon",
+      "renDate": "2024-08-06",
+      "conPhone": "9994483499",
+      "vecType": "Four Wheeler"
+    }
+  ]
+}

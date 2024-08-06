@@ -1,0 +1,151 @@
+
+<h1>Vehicle Rental Management System</h1>
+<div id="content">
+    <div class="container" id="get-data">
+<div >
+    <div style="text-align: center; background-color: white; color: red; border-radius: 20px;"><b>Vehicle Details</b></div>
+    <div class="col-md-8">
+                    <form #myForm="ngForm">
+                    <div class="form-group">
+                        <label for="Vehicle Id">
+                            Vehicle Id
+                        </label>
+                        <input type="text" 
+                                class="form-control" 
+                                name="vecId" 
+                                #vecId="ngModel" ngModel
+                                required
+                                pattern="[0-9]+"
+
+                                />
+                    </div>
+                    <div *ngIf="vecId.touched">
+                        <div *ngIf="vecId.errors?.['required']">
+                            <font><b style="color: white">Employee ID required.</b></font>
+                        </div>
+                        <div *ngIf="vecId.errors?.['pattern']">
+                            <b style="color: white">Invalid Emp Id.</b>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Customer  Name">
+                            Customer Name
+                        </label>
+                        <input type="text" 
+                                class="form-control" 
+                                name="conName" 
+                                #conName="ngModel" ngModel
+                                required
+                                pattern="[a-zA-Z]+"
+                                />
+                    </div>
+
+                    <div *ngIf="conName.touched">
+                      <div *ngIf="conName.errors?.['required']">
+                          <font><b style="color: white;">Customer Name required.</b></font>
+                      </div>
+                      <div *ngIf="conName.errors?.['pattern']">
+                          <b style="color: white;">Invalid Customer Name.</b>
+                      </div>
+                  </div>
+                    <div class="form-group">
+                        <label for="Rental Date">
+                            Rental Date
+                        </label>
+                        <input type="date" 
+                                class="form-control" 
+                                name="renDate" 
+                                #renDate="ngModel" ngModel
+                                required
+                                />
+                    </div>
+
+                    <div *ngIf="renDate.touched">
+                      <div *ngIf="renDate.errors?.['required']">
+                        <font><b style="color: white;">Rental Date required.</b></font>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Consumer Phone">
+                          Consumer Phone
+                      </label>
+                      <input type="text" 
+                              class="form-control" 
+                              name="conPhone" 
+                              #conPhone="ngModel" ngModel
+                              required
+                              pattern="[0-9]+"
+                              />
+                  </div>
+                  <div *ngIf="conPhone.touched">
+                    <div *ngIf="conPhone.errors?.['required']">
+                      <font><b style="color: white;">Customer Phone required.</b></font>
+                    </div>
+                    <div *ngIf="conPhone.errors?.['pattern']">
+                      <b style="color: white;">Invalid Customer Name.</b>
+                  </div>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="Vehicle Type">
+                        Vehicle Type:
+                    </label>
+                    <input type="text" 
+                            class="form-control" 
+                            name="vecType" 
+                            #vecType="ngModel" ngModel
+                            required
+                            pattern="[a-zA-Z]+"
+                            />
+                </div>
+                <div *ngIf="vecType.touched">
+                  <div *ngIf="vecType.errors?.['required']">
+                    <font><b style="color: white;">Vehicle Type Required.</b></font>
+                  </div>
+                </div>
+                <div id="button">                             
+                    <button class="btn btn-success" (click)="insertVehicle(myForm.value)">
+                        Insert 
+                    </button>
+                &nbsp;&nbsp;
+                    <button class="btn btn-primary" (click)="updateVehicle(myForm.value)">
+                        Update 
+                    </button>&nbsp;&nbsp;
+                    <button class="btn btn-danger" (click)="deleteVehicle(myForm.value)">
+                        Delete 
+                    </button>&nbsp;&nbsp;
+                    <button class="btn btn-warning" (click)="findVehicle(myForm.value)">
+                        Find 
+                    </button>
+                    &nbsp;&nbsp;
+                    <button class="btn btn-info" (click)="findallvehicle()">
+                        Find All
+                    </button>
+                  </div> 
+                </form>
+            </div>
+            <div style="color: white; font-size: 40px;">{{result}}</div>
+        </div>
+
+    </div>
+    <div style="width: 100%; border: 2px solid; background-color: white;padding: 5px; " id="out-data">
+        <div style="text-align: center; background-color: red;color: white; border-radius: 20px;"><b>Vehicle List</b></div>
+        <table width="100%" align="center" border="2" >
+         <tr ><th>Vehicle Id</th><th>Consumer Name</th><th>Consumer Phone</th><th>Rental Date</th><th>Vehicle Type</th></tr>
+            <tr *ngFor="let vec of vechicleArr" >
+              <td> {{vec.id}} </td><td> {{vec.conName}} </td><td> {{vec.conPhone}} </td><td>{{vec.renDate}}</td><td>{{vec.vecType}}</td></tr>
+            <tr *ngIf="flag1"><td> {{vehicle.id}} </td><td> {{vehicle.conName}} </td><td> {{vehicle.conPhone}} </td><td>{{vehicle.renDate}}</td><td>{{vehicle.vecType}}</td></tr>
+            
+            
+       </table>
+    </div>
+    </div>
+     
+    
+         
+    
+

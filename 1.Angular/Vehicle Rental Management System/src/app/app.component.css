@@ -1,0 +1,46 @@
+label{
+    font-weight: bold;
+    color:white;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: red;
+    border: 2px solid;
+    height: 100px;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size:60PX;
+    border-radius: 20px;
+}
+#content{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    border: 2px solid;
+    width: 100%;
+    
+}
+#get-data{
+    flex-direction: row;
+    background-color: red;
+    border-radius: 20px;
+    height: 60vh;
+    padding: 10px;
+    margin-left: 0px;
+}
+#button{
+    margin-top: 20px;
+}
+#out-data{
+    border-radius: 20px;
+}
+th,td{
+    background-color: rgb(241, 71, 71);
+    padding: 10px;
+}
+table{
+    border-collapse: separate;
+}
